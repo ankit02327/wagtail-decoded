@@ -17,10 +17,9 @@ import dj_database_url
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-if "SECRET_KEY" in os.environ:
-    SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = "9chbmvo3o#est2mvvn&owmyq6%%b&hueto9!d)2j&#y*kc2tew"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = ['ankit2327.pythonanywhere.com']
 
 if "CSRF_TRUSTED_ORIGINS" in os.environ:
     CSRF_TRUSTED_ORIGINS = os.environ["CSRF_TRUSTED_ORIGINS"].split(",")
