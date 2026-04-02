@@ -42,7 +42,6 @@ w-full h-full group
             {% image placeholder format-webp fill-800x600 as card_image_1x_webp %}
             {% image placeholder format-webp fill-1600x1200 as card_image_2x_webp %}
         {% endif %}
-        {% endwith %}
         <picture>
             <source srcset="{{ card_image_1x_webp.url }} 1x, {{ card_image_2x_webp.url }} 2x" type="image/webp" />
             <source srcset="{{ card_image_1x_jpg.url }} 1x, {{ card_image_2x_jpg.url }} 2x" type="image/jpeg" />
@@ -61,6 +60,7 @@ w-full h-full group
                 {% endif %}
             />
         </picture>
+        {% endwith %}
     </div>
 
     <div class="
