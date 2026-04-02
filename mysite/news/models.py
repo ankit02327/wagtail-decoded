@@ -81,7 +81,7 @@ class ArticlePage(BasePage):
         if self.image:
             for block in self.image:
                 if block.block_type == "image":
-                    return block.value.get("image")
+                    return block.value["image"]
         return None
 
 
