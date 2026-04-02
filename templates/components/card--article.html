@@ -19,7 +19,8 @@ w-full h-full group
         lg:max-w-[345px]
         w-full 
     ">
-        {% if page.listing_image %}
+        {% with placeholder=settings.utils.SystemMessagesSettings.get_placeholder_image %}
+        {% if page.listing_image and page.listing_image != placeholder %}
             {% image page.listing_image format-jpeg fill-800x600 as card_image_1x_jpg %}
             {% image page.listing_image format-jpeg fill-1600x1200 as card_image_2x_jpg %}
             {% image page.listing_image format-webp fill-800x600 as card_image_1x_webp %}
@@ -29,13 +30,19 @@ w-full h-full group
             {% image page.specific.article_image format-jpeg fill-1600x1200 as card_image_2x_jpg %}
             {% image page.specific.article_image format-webp fill-800x600 as card_image_1x_webp %}
             {% image page.specific.article_image format-webp fill-1600x1200 as card_image_2x_webp %}
+        {% elif page.listing_image %}
+            {% image page.listing_image format-jpeg fill-800x600 as card_image_1x_jpg %}
+            {% image page.listing_image format-jpeg fill-1600x1200 as card_image_2x_jpg %}
+            {% image page.listing_image format-webp fill-800x600 as card_image_1x_webp %}
+            {% image page.listing_image format-webp fill-1600x1200 as card_image_2x_webp %}
         {% else %}
             
-            {% image settings.utils.SystemMessagesSettings.get_placeholder_image format-jpeg fill-800x600 as card_image_1x_jpg %}
-            {% image settings.utils.SystemMessagesSettings.get_placeholder_image format-jpeg fill-1600x1200 as card_image_2x_jpg %}
-            {% image settings.utils.SystemMessagesSettings.get_placeholder_image format-webp fill-800x600 as card_image_1x_webp %}
-            {% image settings.utils.SystemMessagesSettings.get_placeholder_image format-webp fill-1600x1200 as card_image_2x_webp %}
+            {% image placeholder format-jpeg fill-800x600 as card_image_1x_jpg %}
+            {% image placeholder format-jpeg fill-1600x1200 as card_image_2x_jpg %}
+            {% image placeholder format-webp fill-800x600 as card_image_1x_webp %}
+            {% image placeholder format-webp fill-1600x1200 as card_image_2x_webp %}
         {% endif %}
+        {% endwith %}
         <picture>
             <source srcset="{{ card_image_1x_webp.url }} 1x, {{ card_image_2x_webp.url }} 2x" type="image/webp" />
             <source srcset="{{ card_image_1x_jpg.url }} 1x, {{ card_image_2x_jpg.url }} 2x" type="image/jpeg" />
