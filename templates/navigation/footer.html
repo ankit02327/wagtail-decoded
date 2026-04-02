@@ -56,7 +56,7 @@
                     <div class="pt-5 flex gap-1 md:gap-2.5">
                         <input 
                             type="email" 
-                            placeholder="Enter your email" 
+                            placeholder="Explore the latest articles" 
                             aria-labelledby="footer-newsletter-signup-title"
                             class="border-[1px] border-mackerel-200 rounded-[3px] px-5 md:py-2.5 md:px-5 text-base md:text-lg bg-white dark:bg-mackerel-100 dark:text-white">
                         {% include "components/button.html" with variant="footer" title="Sign up" url=settings.utils.SystemMessagesSettings.footer_newsletter_signup_link %}
@@ -68,7 +68,7 @@
                 <p class="sr-only">Follow us</p>
                 <div class="flex flex-row gap-10 pt-14">
                     {% if settings.utils.SocialMediaSettings.linkedin_handle %}
-                    <a href="https://linkedin.com/company/{{ settings.utils.SocialMediaSettings.linkedin_handle }}"
+                    <a href="https://www.linkedin.com/in/{{ settings.utils.SocialMediaSettings.linkedin_handle }}/"
                         aria-label="{{ current_site.site_name|default:'We&apos;re' }} on LinkedIn"
                         class="hover:text-mackerel-300">
                         <svg aria-hidden="true" class="fill-current w-7 h-7" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,17 +77,17 @@
                     </a>
                     {% endif %}
                     {% if settings.utils.SocialMediaSettings.instagram_handle %}
-                    <a href="https://www.instagram.com/{{ settings.utils.SocialMediaSettings.instagram_handle }}"
-                        aria-label="{{ current_site.site_name|default:'We&apos;re' }} on Instagram"
+                    <a href="https://github.com/{{ settings.utils.SocialMediaSettings.instagram_handle }}/"
+                        aria-label="{{ current_site.site_name|default:'We&apos;re' }} on GitHub"
                         class="hover:text-mackerel-300">
-                        <svg aria-hidden="true" class="fill-current w-7 h-7" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15.0033 7.68533C10.7468 7.68533 7.31344 11.1194 7.31344 15.377C7.31344 19.6345 10.7468 23.0686 15.0033 23.0686C19.2599 23.0686 22.6933 19.6345 22.6933 15.377C22.6933 11.1194 19.2599 7.68533 15.0033 7.68533ZM15.0033 20.3775C12.2527 20.3775 10.0039 18.135 10.0039 15.377C10.0039 12.6189 12.246 10.3764 15.0033 10.3764C17.7607 10.3764 20.0028 12.6189 20.0028 15.377C20.0028 18.135 17.754 20.3775 15.0033 20.3775ZM24.8015 7.37071C24.8015 8.36814 23.9983 9.16475 23.0078 9.16475C22.0106 9.16475 21.2142 8.36144 21.2142 7.37071C21.2142 6.37997 22.0173 5.57666 23.0078 5.57666C23.9983 5.57666 24.8015 6.37997 24.8015 7.37071ZM29.8946 9.19152C29.7808 6.78831 29.232 4.65956 27.4718 2.90568C25.7184 1.15181 23.5901 0.602882 21.1874 0.482387C18.7111 0.341809 11.2889 0.341809 8.8126 0.482387C6.41662 0.596188 4.28834 1.14511 2.52817 2.89899C0.767987 4.65287 0.225878 6.78162 0.10541 9.18483C-0.0351366 11.6617 -0.0351366 19.0855 0.10541 21.5624C0.219186 23.9656 0.767987 26.0943 2.52817 27.8482C4.28834 29.6021 6.40993 30.151 8.8126 30.2715C11.2889 30.4121 18.7111 30.4121 21.1874 30.2715C23.5901 30.1577 25.7184 29.6088 27.4718 27.8482C29.2253 26.0943 29.7741 23.9656 29.8946 21.5624C30.0351 19.0855 30.0351 11.6684 29.8946 9.19152ZM26.6955 24.22C26.1735 25.532 25.1629 26.5429 23.8444 27.0717C21.8701 27.8549 17.1852 27.6742 15.0033 27.6742C12.8215 27.6742 8.12995 27.8482 6.1623 27.0717C4.85053 26.5496 3.83993 25.5387 3.31121 24.22C2.52817 22.2452 2.70887 17.5593 2.70887 15.377C2.70887 13.1946 2.53486 8.50202 3.31121 6.53393C3.83324 5.22187 4.84384 4.21105 6.1623 3.68221C8.13664 2.89899 12.8215 3.07973 15.0033 3.07973C17.1852 3.07973 21.8767 2.90568 23.8444 3.68221C25.1562 4.20435 26.1668 5.21518 26.6955 6.53393C27.4785 8.50872 27.2978 13.1946 27.2978 15.377C27.2978 17.5593 27.4785 22.2519 26.6955 24.22Z"/>
+                        <svg aria-hidden="true" class="fill-current w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="currentColor"/>
                         </svg>
                     </a>
                     {% endif %}
                     {% if settings.utils.SocialMediaSettings.twitter_handle %}
-                    <a href="https://twitter.com/{{ settings.utils.SocialMediaSettings.twitter_handle }}"
-                        aria-label="{{ current_site.site_name|default:'We&apos;re' }} on Twitter"
+                    <a href="https://x.com/{{ settings.utils.SocialMediaSettings.twitter_handle }}"
+                        aria-label="{{ current_site.site_name|default:'We&apos;re' }} on X"
                         class="hover:text-mackerel-300">
                         <svg aria-hidden="true" class="fill-current w-7 h-7" viewBox="0 0 34 31">
                             <path d="M26.1346 0.376953H31.226L20.1058 13.0837L33.1875 30.377H22.9471L14.9207 19.8914L5.7476 30.377H0.649038L12.5409 16.7832L0 0.376953H10.5L17.7476 9.96109L26.1346 0.376953ZM24.3462 27.3337H27.1659L8.96394 3.26157H5.9351L24.3462 27.3337Z"/>
@@ -117,7 +117,7 @@
         </div>
     </div>
     <p class="font-codepro text-base text-black dark:text-white opacity-60 pt-10 md:pt-20 mb-10 leading-6">
-        © {% now "Y" %}  {{ current_site.site_name }}
+        © {% now "Y" %} Ankit Kumar — Wagtail Decoded
     </p>
 </footer>
 
