@@ -24,6 +24,11 @@ w-full h-full group
             {% image page.listing_image format-jpeg fill-1600x1200 as card_image_2x_jpg %}
             {% image page.listing_image format-webp fill-800x600 as card_image_1x_webp %}
             {% image page.listing_image format-webp fill-1600x1200 as card_image_2x_webp %}
+        {% elif page.specific.article_image %}
+            {% image page.specific.article_image format-jpeg fill-800x600 as card_image_1x_jpg %}
+            {% image page.specific.article_image format-jpeg fill-1600x1200 as card_image_2x_jpg %}
+            {% image page.specific.article_image format-webp fill-800x600 as card_image_1x_webp %}
+            {% image page.specific.article_image format-webp fill-1600x1200 as card_image_2x_webp %}
         {% else %}
             
             {% image settings.utils.SystemMessagesSettings.get_placeholder_image format-jpeg fill-800x600 as card_image_1x_jpg %}

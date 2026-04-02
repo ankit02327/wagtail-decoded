@@ -76,6 +76,14 @@ class ArticlePage(BasePage):
         elif self.first_published_at:
             return self.first_published_at.strftime("%d %b %Y")
 
+    @property
+    def article_image(self):
+        if self.image:
+            for block in self.image:
+                if block.block_type == "image":
+                    return block.value.get("image")
+        return None
+
 
 class NewsListingPage(BasePage):
     template = "pages/news_listing_page.html"
