@@ -21,26 +21,26 @@ w-full h-full group
     ">
         {% with placeholder=settings.utils.SystemMessagesSettings.get_placeholder_image %}
         {% if page.listing_image and page.listing_image != placeholder %}
-            {% image page.listing_image format-jpeg fill-640x360 as card_image_1x_jpg %}
-            {% image page.listing_image format-jpeg fill-1280x720 as card_image_2x_jpg %}
-            {% image page.listing_image format-webp fill-640x360 as card_image_1x_webp %}
-            {% image page.listing_image format-webp fill-1280x720 as card_image_2x_webp %}
+            {% image page.listing_image fill-640x360 format-jpeg as card_image_1x_jpg %}
+            {% image page.listing_image fill-1280x720 format-jpeg as card_image_2x_jpg %}
+            {% image page.listing_image fill-640x360 format-webp as card_image_1x_webp %}
+            {% image page.listing_image fill-1280x720 format-webp as card_image_2x_webp %}
         {% elif page.specific.article_image %}
-            {% image page.specific.article_image format-jpeg fill-640x360 as card_image_1x_jpg %}
-            {% image page.specific.article_image format-jpeg fill-1280x720 as card_image_2x_jpg %}
-            {% image page.specific.article_image format-webp fill-640x360 as card_image_1x_webp %}
-            {% image page.specific.article_image format-webp fill-1280x720 as card_image_2x_webp %}
+            {% image page.specific.article_image fill-640x360 format-jpeg as card_image_1x_jpg %}
+            {% image page.specific.article_image fill-1280x720 format-jpeg as card_image_2x_jpg %}
+            {% image page.specific.article_image fill-640x360 format-webp as card_image_1x_webp %}
+            {% image page.specific.article_image fill-1280x720 format-webp as card_image_2x_webp %}
         {% elif page.listing_image %}
-            {% image page.listing_image format-jpeg fill-640x360 as card_image_1x_jpg %}
-            {% image page.listing_image format-jpeg fill-1280x720 as card_image_2x_jpg %}
-            {% image page.listing_image format-webp fill-640x360 as card_image_1x_webp %}
-            {% image page.listing_image format-webp fill-1280x720 as card_image_2x_webp %}
+            {% image page.listing_image fill-640x360 format-jpeg as card_image_1x_jpg %}
+            {% image page.listing_image fill-1280x720 format-jpeg as card_image_2x_jpg %}
+            {% image page.listing_image fill-640x360 format-webp as card_image_1x_webp %}
+            {% image page.listing_image fill-1280x720 format-webp as card_image_2x_webp %}
         {% else %}
             
-            {% image placeholder format-jpeg fill-640x360 as card_image_1x_jpg %}
-            {% image placeholder format-jpeg fill-1280x720 as card_image_2x_jpg %}
-            {% image placeholder format-webp fill-640x360 as card_image_1x_webp %}
-            {% image placeholder format-webp fill-1280x720 as card_image_2x_webp %}
+            {% image placeholder fill-640x360 format-jpeg as card_image_1x_jpg %}
+            {% image placeholder fill-1280x720 format-jpeg as card_image_2x_jpg %}
+            {% image placeholder fill-640x360 format-webp as card_image_1x_webp %}
+            {% image placeholder fill-1280x720 format-webp as card_image_2x_webp %}
         {% endif %}
         <picture>
             <source srcset="{{ card_image_1x_webp.url }} 1x, {{ card_image_2x_webp.url }} 2x" type="image/webp" />
@@ -55,9 +55,7 @@ w-full h-full group
                 aspect-[20/11] 
                 md:aspect-[1]
                 w-full h-full object-cover"
-                {% if card_image_1x_webp.focal_point %}
-                style='{{ card_image_1x_webp.object_position_style }}'
-                {% endif %}
+                {% if card_image_1x_webp.focal_point %}style="object-position: {{ card_image_1x_webp.focal_point.centroid_x }}% {{ card_image_1x_webp.focal_point.centroid_y }}%"{% endif %}
             />
         </picture>
         {% endwith %}
@@ -97,7 +95,7 @@ w-full h-full group
         </p>
         {% if page.author %}
             <div class="flex flex-row items-center gap-3 text-sm md:text-base text-grey-700 dark:text-grey-200 font-codepro pt-7">
-                {% image page.author.image format-webp fill-60x60 gray as author_avatar %}
+                {% image page.author.image fill-60x60 gray format-webp as author_avatar %}
 
             <img
                 src="{{ author_avatar.url }}"
