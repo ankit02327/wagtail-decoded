@@ -15,26 +15,26 @@ w-full h-full group
     ">
         {% with placeholder=settings.utils.SystemMessagesSettings.get_placeholder_image %}
         {% if page.listing_image and page.listing_image != placeholder %}
-            {% image page.listing_image max-640x360 format-jpeg as card_image_1x_jpg %}
-            {% image page.listing_image max-1280x720 format-jpeg as card_image_2x_jpg %}
-            {% image page.listing_image max-640x360 format-webp as card_image_1x_webp %}
-            {% image page.listing_image max-1280x720 format-webp as card_image_2x_webp %}
+            {% image page.listing_image fill-640x360 format-jpeg as card_image_1x_jpg %}
+            {% image page.listing_image fill-1280x720 format-jpeg as card_image_2x_jpg %}
+            {% image page.listing_image fill-640x360 format-webp as card_image_1x_webp %}
+            {% image page.listing_image fill-1280x720 format-webp as card_image_2x_webp %}
         {% elif page.specific.article_image %}
-            {% image page.specific.article_image max-640x360 format-jpeg as card_image_1x_jpg %}
-            {% image page.specific.article_image max-1280x720 format-jpeg as card_image_2x_jpg %}
-            {% image page.specific.article_image max-640x360 format-webp as card_image_1x_webp %}
-            {% image page.specific.article_image max-1280x720 format-webp as card_image_2x_webp %}
+            {% image page.specific.article_image fill-640x360 format-jpeg as card_image_1x_jpg %}
+            {% image page.specific.article_image fill-1280x720 format-jpeg as card_image_2x_jpg %}
+            {% image page.specific.article_image fill-640x360 format-webp as card_image_1x_webp %}
+            {% image page.specific.article_image fill-1280x720 format-webp as card_image_2x_webp %}
         {% elif page.listing_image %}
-            {% image page.listing_image max-640x360 format-jpeg as card_image_1x_jpg %}
-            {% image page.listing_image max-1280x720 format-jpeg as card_image_2x_jpg %}
-            {% image page.listing_image max-640x360 format-webp as card_image_1x_webp %}
-            {% image page.listing_image max-1280x720 format-webp as card_image_2x_webp %}
+            {% image page.listing_image fill-640x360 format-jpeg as card_image_1x_jpg %}
+            {% image page.listing_image fill-1280x720 format-jpeg as card_image_2x_jpg %}
+            {% image page.listing_image fill-640x360 format-webp as card_image_1x_webp %}
+            {% image page.listing_image fill-1280x720 format-webp as card_image_2x_webp %}
         {% else %}
             
-            {% image settings.utils.SystemMessagesSettings.get_placeholder_image max-640x360 format-jpeg as card_image_1x_jpg %}
-            {% image settings.utils.SystemMessagesSettings.get_placeholder_image max-1280x720 format-jpeg as card_image_2x_jpg %}
-            {% image settings.utils.SystemMessagesSettings.get_placeholder_image max-640x360 format-webp as card_image_1x_webp %}
-            {% image settings.utils.SystemMessagesSettings.get_placeholder_image max-1280x720 format-webp as card_image_2x_webp %}
+            {% image settings.utils.SystemMessagesSettings.get_placeholder_image fill-640x360 format-jpeg as card_image_1x_jpg %}
+            {% image settings.utils.SystemMessagesSettings.get_placeholder_image fill-1280x720 format-jpeg as card_image_2x_jpg %}
+            {% image settings.utils.SystemMessagesSettings.get_placeholder_image fill-640x360 format-webp as card_image_1x_webp %}
+            {% image settings.utils.SystemMessagesSettings.get_placeholder_image fill-1280x720 format-webp as card_image_2x_webp %}
         {% endif %}
         <picture>
             <source srcset="{{ card_image_1x_webp.url }} 1x, {{ card_image_2x_webp.url }} 2x" type="image/webp" />
@@ -49,7 +49,7 @@ w-full h-full group
                 aspect-[20/11] 
                 md:aspect-[4/3] lg:aspect-[20/11] 
                 
-                w-full h-full object-contain"
+                w-full h-full object-cover"
                 {% if card_image_1x_webp.focal_point %}style="object-position: {{ card_image_1x_webp.focal_point.centroid_x }}% {{ card_image_1x_webp.focal_point.centroid_y }}%"{% endif %}
             />
         </picture>
