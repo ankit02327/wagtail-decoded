@@ -50,7 +50,7 @@ w-full h-full group
                 md:aspect-[4/3] lg:aspect-[20/11] 
                 
                 w-full h-full object-cover"
-                {% if card_image_1x_webp.focal_point %}style="object-position: {{ card_image_1x_webp.focal_point.centroid_x }}% {{ card_image_1x_webp.focal_point.centroid_y }}%"{% endif %}
+                {% if card_image_1x_webp.focal_point %}{{ 'style' }}="{{ card_image_1x_webp.object_position_style }}"{% endif %}
             />
         </picture>
         {% endwith %}

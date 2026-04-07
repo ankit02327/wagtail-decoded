@@ -53,7 +53,7 @@
                 alt="{% firstof page.image.0.value.image_alt_text page_image_1x_webp.alt %}"
                 class="w-full h-full max-h-[350px] md:max-h-[400px] lg:max-h-[640px] object-contain"
                 {% if page_image_1x_webp.focal_point %}
-                style="{{ page_image_1x_webp.object_position_style }}"
+                {{ "style" }}="{{ page_image_1x_webp.object_position_style }}"
                 {% endif %}
             />
         </picture>
